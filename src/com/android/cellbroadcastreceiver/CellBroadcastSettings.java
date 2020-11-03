@@ -496,6 +496,9 @@ public class CellBroadcastSettings extends CollapsingToolbarBaseActivity {
             if (mAreaUpdateInfoCheckBox != null) {
                 mAreaUpdateInfoCheckBox.setOnPreferenceChangeListener(startConfigServiceListener);
             }
+            if (mPresidentialCheckBox != null) {
+                mPresidentialCheckBox.setOnPreferenceChangeListener(startConfigServiceListener);
+            }
             if (mExtremeCheckBox != null) {
                 mExtremeCheckBox.setOnPreferenceChangeListener(startConfigServiceListener);
             }
@@ -803,6 +806,10 @@ public class CellBroadcastSettings extends CollapsingToolbarBaseActivity {
 
 
         private void setAlertsEnabled(boolean alertsEnabled) {
+            if (mPresidentialCheckBox != null) {
+                mPresidentialCheckBox.setEnabled(alertsEnabled);
+                mPresidentialCheckBox.setChecked(alertsEnabled);
+            }
             if (mSevereCheckBox != null) {
                 mSevereCheckBox.setEnabled(alertsEnabled);
                 mSevereCheckBox.setChecked(alertsEnabled);
