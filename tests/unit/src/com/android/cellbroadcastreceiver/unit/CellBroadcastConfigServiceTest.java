@@ -256,6 +256,7 @@ public class CellBroadcastConfigServiceTest extends CellBroadcastTest {
     @SmallTest
     public void testEnablingChannelsDefault() throws Exception {
         setPreference(CellBroadcastSettings.KEY_ENABLE_ALERTS_MASTER_TOGGLE, true);
+        setPreference(CellBroadcastSettings.KEY_ENABLE_CMAS_PRESIDENTIAL_ALERTS, true);
         setPreference(CellBroadcastSettings.KEY_ENABLE_CMAS_EXTREME_THREAT_ALERTS, true);
         setPreference(CellBroadcastSettings.KEY_ENABLE_CMAS_SEVERE_THREAT_ALERTS, true);
         setPreference(CellBroadcastSettings.KEY_ENABLE_CMAS_AMBER_ALERTS, true);
@@ -329,6 +330,7 @@ public class CellBroadcastConfigServiceTest extends CellBroadcastTest {
     @SmallTest
     public void testEnablingPresidential() throws Exception {
         setPreference(CellBroadcastSettings.KEY_ENABLE_ALERTS_MASTER_TOGGLE, true);
+        setPreference(CellBroadcastSettings.KEY_ENABLE_CMAS_PRESIDENTIAL_ALERTS, true);
         CbConfig[] configs = new CbConfig[]{
                 new CbConfig(SmsEnvelope.SERVICE_CATEGORY_CMAS_PRESIDENTIAL_LEVEL_ALERT,
                         SmsEnvelope.SERVICE_CATEGORY_CMAS_PRESIDENTIAL_LEVEL_ALERT,
@@ -344,11 +346,35 @@ public class CellBroadcastConfigServiceTest extends CellBroadcastTest {
         mConfigService.enableCellBroadcastChannels(SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
         verifySetRanges(configs, 1, 1);
 
-        setPreference(CellBroadcastSettings.KEY_ENABLE_ALERTS_MASTER_TOGGLE, false);
+        setPreference(CellBroadcastSettings.KEY_ENABLE_CMAS_PRESIDENTIAL_ALERTS, false);
+        configs = new CbConfig[]{
+                new CbConfig(SmsEnvelope.SERVICE_CATEGORY_CMAS_PRESIDENTIAL_LEVEL_ALERT,
+                        SmsEnvelope.SERVICE_CATEGORY_CMAS_PRESIDENTIAL_LEVEL_ALERT,
+                        SmsCbMessage.MESSAGE_FORMAT_3GPP2, false),
+                new CbConfig(SmsCbConstants.MESSAGE_ID_CMAS_ALERT_PRESIDENTIAL_LEVEL,
+                        SmsCbConstants.MESSAGE_ID_CMAS_ALERT_PRESIDENTIAL_LEVEL,
+                        SmsCbMessage.MESSAGE_FORMAT_3GPP, false),
+                new CbConfig(SmsCbConstants.MESSAGE_ID_CMAS_ALERT_PRESIDENTIAL_LEVEL_LANGUAGE,
+                        SmsCbConstants.MESSAGE_ID_CMAS_ALERT_PRESIDENTIAL_LEVEL_LANGUAGE,
+                        SmsCbMessage.MESSAGE_FORMAT_3GPP, false),
+
+        };
         mConfigService.enableCellBroadcastChannels(SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
         verifySetRanges(configs, 2, 2);
 
-        setPreference(CellBroadcastSettings.KEY_ENABLE_ALERTS_MASTER_TOGGLE, true);
+        setPreference(CellBroadcastSettings.KEY_ENABLE_CMAS_PRESIDENTIAL_ALERTS, true);
+        configs = new CbConfig[]{
+                new CbConfig(SmsEnvelope.SERVICE_CATEGORY_CMAS_PRESIDENTIAL_LEVEL_ALERT,
+                        SmsEnvelope.SERVICE_CATEGORY_CMAS_PRESIDENTIAL_LEVEL_ALERT,
+                        SmsCbMessage.MESSAGE_FORMAT_3GPP2, true),
+                new CbConfig(SmsCbConstants.MESSAGE_ID_CMAS_ALERT_PRESIDENTIAL_LEVEL,
+                        SmsCbConstants.MESSAGE_ID_CMAS_ALERT_PRESIDENTIAL_LEVEL,
+                        SmsCbMessage.MESSAGE_FORMAT_3GPP, true),
+                new CbConfig(SmsCbConstants.MESSAGE_ID_CMAS_ALERT_PRESIDENTIAL_LEVEL_LANGUAGE,
+                        SmsCbConstants.MESSAGE_ID_CMAS_ALERT_PRESIDENTIAL_LEVEL_LANGUAGE,
+                        SmsCbMessage.MESSAGE_FORMAT_3GPP, true),
+
+        };
         mConfigService.enableCellBroadcastChannels(SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
         verifySetRanges(configs, 3, 3);
     }

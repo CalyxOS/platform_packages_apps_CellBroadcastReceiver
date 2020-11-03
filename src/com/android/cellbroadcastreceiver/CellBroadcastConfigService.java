@@ -264,7 +264,10 @@ public class CellBroadcastConfigService extends IntentService {
 
         // CMAS Presidential must be always on (See 3GPP TS 22.268 Section 6.2) regardless
         // user's preference
-        boolean enablePresidential = true;
+        boolean enablePresidential = enableAlertsMasterToggle && (isRoaming
+                ? true
+                : prefs.getBoolean(
+                CellBroadcastSettings.KEY_ENABLE_CMAS_PRESIDENTIAL_ALERTS, true));
 
         boolean enableCmasExtremeAlerts = enableAlertsMasterToggle && (isRoaming
                 ? res.getBoolean(R.bool.extreme_threat_alerts_enabled_default)
