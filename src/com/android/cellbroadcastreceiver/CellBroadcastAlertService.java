@@ -526,8 +526,9 @@ public class CellBroadcastAlertService extends Service {
         // CMAS warning types
         if (channelManager.checkCellBroadcastChannelRange(channel,
                 R.array.cmas_presidential_alerts_channels_range_strings)) {
-            // always enabled
-            return true;
+            return emergencyAlertEnabled
+                    && PreferenceManager.getDefaultSharedPreferences(this).getBoolean(
+                            CellBroadcastSettings.KEY_ENABLE_CMAS_PRESIDENTIAL_ALERTS, true);
         }
         if (channelManager.checkCellBroadcastChannelRange(channel,
                 R.array.cmas_alert_extreme_channels_range_strings)) {
