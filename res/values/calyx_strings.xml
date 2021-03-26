@@ -15,4 +15,6 @@
      limitations under the License.
 -->
 <resources>
+    <!-- Preference summary for enable presidential threat alerts checkbox. [CHAR LIMIT=100] -->
+    <string name="calyx_enable_cmas_presidential_alerts_summary">National warning messages issued by the President</string>
 </resources>
