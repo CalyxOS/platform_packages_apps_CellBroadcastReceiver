@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4e02dc35_f9b53584",
+        "filename": "res/values/calyx_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-03-29T12:11:05Z",
+      "side": 1,
+      "message": "We know from the code this is enabled in other places too so this is wrong.",
+      "revId": "2e532dbd0b95457eaf34175899c31fd71ac56f67",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0",
+      "unresolved": true
+    }
+  ]
+}
