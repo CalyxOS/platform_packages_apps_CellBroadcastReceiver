@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="calyx_enable_cmas_presidential_alerts_summary">Nationale Warnmeldungen des Präsidenten</string>
+    <string name="calyx_enable_cmas_presidential_alerts_summary">Nationale Meldungen herausgegeben von Behörden/Land/Bund</string>
 </resources>
