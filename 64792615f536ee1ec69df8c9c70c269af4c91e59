@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "094737bc_268e0ae1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-08-23T21:50:52Z",
+      "side": 1,
+      "message": "This could be moved to be before the \"Allow disabling\" commit.",
+      "revId": "64792615f536ee1ec69df8c9c70c269af4c91e59",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
