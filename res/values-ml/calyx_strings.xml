@@ -1,2 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="calyx_enable_cmas_presidential_alerts_summary">രാഷ്ട്രപതി പുറപ്പെടുവിച്ച ദേശീയ മുന്നറിയിപ്പ് സന്ദേശങ്ങൾ</string>
+</resources>
