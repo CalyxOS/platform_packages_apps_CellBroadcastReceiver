@@ -522,8 +522,8 @@ public class CellBroadcastAlertService extends Service {
         }
         // CMAS warning types
         if (resourcesKey == R.array.cmas_presidential_alerts_channels_range_strings) {
-            return emergencyAlertEnabled && checkAlertConfigEnabled(
-                    subId, CellBroadcastSettings.KEY_ENABLE_CMAS_PRESIDENTIAL_ALERTS, true);
+            // always enabled
+            return true;
         }
         if (resourcesKey == R.array.cmas_alert_extreme_channels_range_strings) {
             return emergencyAlertEnabled && checkAlertConfigEnabled(
