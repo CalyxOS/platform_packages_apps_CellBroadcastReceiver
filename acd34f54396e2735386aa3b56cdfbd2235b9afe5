@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3b0a5e3f_3eb2358d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-10-05T14:39:48Z",
+      "side": 1,
+      "message": "Let\u0027s skip this for now.",
+      "revId": "acd34f54396e2735386aa3b56cdfbd2235b9afe5",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
