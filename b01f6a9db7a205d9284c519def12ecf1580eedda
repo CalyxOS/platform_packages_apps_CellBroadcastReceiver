@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0a01c585_88aa3ca2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-11-02T22:05:28Z",
+      "side": 1,
+      "message": "All AOSP diff has now is ",
+      "revId": "b01f6a9db7a205d9284c519def12ecf1580eedda",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
